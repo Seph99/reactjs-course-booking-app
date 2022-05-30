@@ -1,17 +1,20 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 // React Bootstrap components
 // importing components
 import { Navbar, Nav } from 'react-bootstrap';
 
 // react-router
 import { Link } from 'react-router-dom';
+import UserContext from '../UserContext';
 
 export default function AppNavbar() {
 
+	const { user } = useContext(UserContext);
+
 	// Store the user info (email) in the state
 	// getItem gets the key in the local storage
-	const [user, setUser] = useState(localStorage.getItem('email'));
-	console.log(user);
+	// const [user, setUser] = useState(localStorage.getItem('email'));
+	// console.log(user);
 
 
 	return(
@@ -22,7 +25,7 @@ export default function AppNavbar() {
 				<Nav className="ms-auto">
 					<Nav.Link as={Link} to="/">Home</Nav.Link>
 					<Nav.Link as={Link} to="/courses">Courses</Nav.Link>
-					{(user !== null) ?
+					{(user.accessToken !== null) ?
 						<Nav.Link as={Link} to="/logout">Logout</Nav.Link>
 
 						:

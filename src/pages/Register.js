@@ -1,9 +1,13 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import Swal from 'sweetalert2';
+import UserContext from '../UserContext';
+import { Navigate } from 'react-router-dom'
 
 
 export default function Register() {
+
+	const { user } = useContext(UserContext);
 	
 	// state hooks to store the values of the input fields
 	const [ email, setEmail ] = useState('');
@@ -41,6 +45,13 @@ export default function Register() {
 
 
 	return(
+
+		// (user.email !== null) ?
+		(user.accessToken !== null) ?
+
+		<Navigate to="/courses" />
+
+		:
 
 		<Form onSubmit={e => registerUser(e)}>
 			<h1>Register</h1>
