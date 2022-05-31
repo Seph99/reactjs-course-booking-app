@@ -17,7 +17,7 @@ export default function Login() {
 
 	// getting a response is usually a 2-stage process
 	.then(response => response.json()) ===> parse the response as json.
-	.then(actualData => console.log(actualData) ) ====> process the result of the response
+	.then(actualData => console.log(actualData) ) ====> process/validate the result of the response. Check the data type (object, array, boolean etc. so that we know how to access the data itself)
 
 
 	*/

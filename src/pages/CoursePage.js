@@ -39,9 +39,12 @@ export default function CoursePage() {
 
 	}
 
+	// it renders the function fetchData() -> it gets the updated data coming from the fetch
 	useEffect(() => {
 		fetchData()
 	},[])
+	// if useEffect() has no variables in the second argument, it will only render one time
+	// fetchData() is called in useEffect so that we can reuse fetchData
 
 	const { user } = useContext(UserContext);
 

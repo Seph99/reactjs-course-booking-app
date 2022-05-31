@@ -19,7 +19,7 @@ export default function UserView({coursesData}) {
 			} else {
 				return null;
 			}
-		})
+		}) 
 
 		// set the courses state to the result of our map function, to bring our return course component outside of the scope of the useEffect where our return statement below can see.
 

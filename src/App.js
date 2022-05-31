@@ -9,6 +9,7 @@ import CoursePage from './pages/CoursePage';
 import Register from './pages/Register';
 import Login from './pages/Login';
 import Logout from './pages/Logout';
+import SpecificCourse from './pages/SpecificCourse';
 // import PageNotFound from './pages/PageNotFound'; // same as ErrorPage
 import ErrorPage from './pages/ErrorPage';
 import { Container } from 'react-bootstrap';
@@ -48,6 +49,7 @@ function App() {
                     <Route path="/register" element={ <Register /> }/>
                     <Route path="/login" element={ <Login /> }/>
                     <Route path="/logout" element={ <Logout /> }/>
+                    <Route path="/courses/:courseId" element={ <SpecificCourse /> }/>
                     <Route path="*" element={ <ErrorPage /> }/>
                 </Routes>       
           </Container>
